@@ -89,10 +89,10 @@ RSpec.describe AddressBook do
   end
 
   # Test the binary_search method
-  describe "#binary_search" do
+  describe "#iterative_search" do
     it "searches AddressBook for a non-existent entry" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Dan")
+      entry = book.iterative_search("Dan")
       expect(entry).to be_nil
     end
 
@@ -136,4 +136,5 @@ RSpec.describe AddressBook do
       expect(entry).to be_nil
     end
   end
+
 end
