@@ -8,6 +8,14 @@ class AddressBook
     @entries = []
   end
 
+  def nuke_entries
+    @entries.clear
+    puts "BOOM goes the dynamite!!"
+    puts "Press enter to return to the main menu with no friends in your book"
+    gets.chomp
+    system "clear"
+  end
+
   def add_entry(name, phone_number, email)
     index = 0
     entries.each do |entry|
@@ -32,7 +40,7 @@ class AddressBook
   def binary_search(name)
     lower = 0
     upper = entries.length - 1
-    
+
     while lower <= upper
       mid = (lower + upper) / 2
       mid_name = entries[mid].name
